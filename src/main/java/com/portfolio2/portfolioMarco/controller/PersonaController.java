@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin("http://localhost:4200/")
 public class PersonaController {
 
-    private PersonaService personaService;
+    final PersonaService personaService;
 
     @Autowired
     public PersonaController(PersonaService personaService) {
