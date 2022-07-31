@@ -16,7 +16,7 @@ public class PortfolioMarcoApplication {
 		ApplicationContext context = SpringApplication.run(PortfolioMarcoApplication.class, args);
 		PersonaRepo persorepo = context.getBean(PersonaRepo.class);
 
-		Persona persona = new Persona(1L,"Marco","Iannuzzi","Programador","Villa Dolores","(03544)629803","marcoiannuzzi@live.com.ar","Full Stack Developer","https://github.com/Marcoiannuzzi","https://media-exp1.licdn.com/dms/image/D4D35AQFtNONc7weYyA/profile-framedphoto-shrink_200_200/0/1640616077162?e=1659286800&v=beta&t=AFUdcdN0Sa3IpEHgA1x0IGRFhpEE-BosmwyIJVBj1Uw");
+		Persona persona = new Persona(1L,"Marco","Iannuzzi","Programador","Villa Dolores","(03544)629803","marcoiannuzzi@live.com.ar","Quisiera poder formar parte de un grupo de trabajo donde tenga la posibilidad de desarrollar mis habilidades, logrando al mismo tiempo resultados y crecimiento","https://github.com/Marcoiannuzzi","https://media-exp1.licdn.com/dms/image/D4D35AQFtNONc7weYyA/profile-framedphoto-shrink_200_200/0/1640616077162?e=1659286800&v=beta&t=AFUdcdN0Sa3IpEHgA1x0IGRFhpEE-BosmwyIJVBj1Uw");
 		persorepo.save(persona);
 	}
 

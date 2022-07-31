@@ -18,17 +18,17 @@ public class Estudio {
     private Long eduId;
     private String institucion;
     private String titulo;
-    private String start;
-    private String end;
+    private String inicio;
+    private String fin;
 
     public Estudio() {
     }
 
-    public Estudio(Long eduId, String institucion, String titulo, String start, String end) {
+    public Estudio(Long eduId, String institucion, String titulo, String inicio, String fin) {
         this.eduId = eduId;
         this.institucion = institucion;
         this.titulo = titulo;
-        this.start = start;
-        this.end = end;
+        this.inicio = inicio;
+        this.fin = fin;
     }
 }

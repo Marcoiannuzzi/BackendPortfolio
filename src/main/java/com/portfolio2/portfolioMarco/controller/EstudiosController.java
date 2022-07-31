@@ -33,12 +33,12 @@ public class EstudiosController {
         return estudiosService.create(estudio);
     }
 
-    @PutMapping("/api/estudios/{id}")
+    @PutMapping("/api/estudios")
     public ResponseEntity<Estudio> update(@RequestBody Estudio estudio){
         return estudiosService.update(estudio);
     }
 
-    @DeleteMapping("/api/estudio/{id}")
+    @DeleteMapping("/api/estudios/{id}")
     public ResponseEntity<Estudio> delete(@PathVariable Long id) {
         return estudiosService.delete(id);
     }

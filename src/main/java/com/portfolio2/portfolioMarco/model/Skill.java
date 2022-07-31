@@ -15,15 +15,15 @@ public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long skillId;
-    private String imgUrl;
-    private int procentaje;
+    private String nombre;
+    private int porcentaje;
 
     public Skill() {
     }
 
-    public Skill(Long skillId, String imgUrl, int procentaje) {
+    public Skill(Long skillId, String nombre, int porcentaje) {
         this.skillId = skillId;
-        this.imgUrl = imgUrl;
-        this.procentaje = procentaje;
+        this.nombre = nombre;
+        this.porcentaje = porcentaje;
     }
 }

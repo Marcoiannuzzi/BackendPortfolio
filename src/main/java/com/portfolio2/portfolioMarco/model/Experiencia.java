@@ -14,17 +14,17 @@ public class Experiencia {
     private Long expId;
     private String institucion;
     private String tareas;
-    private String start;
-    private String end;
+    private String inicio;
+    private String fin;
 
     public Experiencia() {
     }
 
-    public Experiencia(Long expId, String institucion, String tareas, String start, String end) {
+    public Experiencia(Long expId, String institucion, String tareas, String inicio, String fin) {
         this.expId = expId;
         this.institucion = institucion;
         this.tareas = tareas;
-        this.start = start;
-        this.end = end;
+        this.inicio = inicio;
+        this.fin = fin;
     }
 }
