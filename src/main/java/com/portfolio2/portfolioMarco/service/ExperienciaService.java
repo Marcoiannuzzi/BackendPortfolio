@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -26,6 +27,15 @@ public class ExperienciaService {
         return experienciaRepo.findAll();
     }
 
+    public ResponseEntity<Experiencia>findById(Long id){
+        Optional<Experiencia> expOp = experienciaRepo.findById(id);
+        if(expOp.isPresent()){
+            return ResponseEntity.ok(expOp.get());
+        } else{
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     // Crear experiencia
 
     public Experiencia create(Experiencia experiencia){
@@ -38,7 +48,7 @@ public class ExperienciaService {
         if (exp.getExpId() == null){
             return ResponseEntity.badRequest().build();
         }
-        if (experienciaRepo.existsById(exp.getExpId())){
+        if (!experienciaRepo.existsById(exp.getExpId())){
             return ResponseEntity.notFound().build();
         }
         Experiencia result = experienciaRepo.save(exp);

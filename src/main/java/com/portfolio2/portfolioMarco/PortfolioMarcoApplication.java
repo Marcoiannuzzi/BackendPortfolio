@@ -1,8 +1,6 @@
 package com.portfolio2.portfolioMarco;
 
-import com.portfolio2.portfolioMarco.model.Estudio;
 import com.portfolio2.portfolioMarco.model.Persona;
-import com.portfolio2.portfolioMarco.repository.EstudioRepo;
 import com.portfolio2.portfolioMarco.repository.PersonaRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

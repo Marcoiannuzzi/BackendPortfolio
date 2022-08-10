@@ -26,6 +26,11 @@ public class ProyectoController {
         return proyectoService.findAll();
     }
 
+    @GetMapping("/api/proyectos/{id}")
+    public ResponseEntity<Proyecto> findById(@PathVariable Long id){
+        return proyectoService.findById(id);
+    }
+
     //Crear Proyecto
 
     @PostMapping("/api/proyectos")
@@ -43,7 +48,7 @@ public class ProyectoController {
     //Borrar Proyecto
 
     @DeleteMapping("/api/proyectos/{id}")
-    public ResponseEntity<Proyecto> delete(@RequestBody Long id){
+    public ResponseEntity<Proyecto> delete(@PathVariable Long id){
         return proyectoService.delete(id);
     }
 

@@ -35,6 +35,7 @@ public class PersonaController {
     // Buscar una persona por id
     @GetMapping("/api/persona/{id}")
     public ResponseEntity<Persona> findById(@PathVariable Long id){
+
         return personaService.findById(id);
     }
 

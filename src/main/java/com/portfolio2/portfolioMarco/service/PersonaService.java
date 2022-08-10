@@ -28,15 +28,10 @@ public class PersonaService {
 
    public ResponseEntity<Persona> findById(Long id){
         Optional<Persona> personaOpt = personaRepo.findById(id);
-
-        //opcion 1 -- Devuelve un Responce entity, si lo encuentra devuelve una persona sino devuelve un 404 not found
         if(personaOpt.isPresent()){
             return ResponseEntity.ok(personaOpt.get());
         } else
             return ResponseEntity.notFound().build();
-
-        // opcion 2 Devuelve una persona o un null si no la encuentra (el estado siempre sera un 200 ok)
-        // return personaRepo.findById(id).orElse(null);
     }
 
 

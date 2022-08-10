@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -24,6 +25,14 @@ public class EstudiosService {
     // Buscar todos los estudios
     public List<Estudio> findAll() {
         return estudioRepo.findAll();
+    }
+
+    public ResponseEntity<Estudio> findById(Long id){
+        Optional<Estudio> estudioOpt = estudioRepo.findById(id);
+        if(estudioOpt.isPresent()){
+            return ResponseEntity.ok(estudioOpt.get());
+        } else
+            return ResponseEntity.notFound().build();
     }
 
     // Crear un nuevo estudio

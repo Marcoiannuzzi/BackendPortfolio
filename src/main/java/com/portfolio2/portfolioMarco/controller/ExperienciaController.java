@@ -26,6 +26,11 @@ public class ExperienciaController {
         return experienciaService.findAll();
     }
 
+    @GetMapping("/api/experiencias/{id}")
+    public ResponseEntity<Experiencia> findById(@PathVariable Long id){
+        return experienciaService.findById(id);
+    }
+
     // Crear experiencia
 
     @PostMapping("/api/experiencias")

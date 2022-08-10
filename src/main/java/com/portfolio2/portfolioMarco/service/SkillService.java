@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -25,6 +26,15 @@ public class SkillService {
 
     public List<Skill> findAll() {
         return skillRepo.findAll();
+    }
+
+    public ResponseEntity<Skill>findById(Long id){
+        Optional<Skill> opSkill = skillRepo.findById(id);
+        if(opSkill.isPresent()){
+            return ResponseEntity.ok(opSkill.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     // Crear skill

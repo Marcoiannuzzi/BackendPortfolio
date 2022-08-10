@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -27,6 +28,16 @@ public class ProyectoService {
         return proyectoRepo.findAll();
     }
 
+
+    public ResponseEntity<Proyecto> findById(Long id){
+        Optional<Proyecto> opProyecto = proyectoRepo.findById(id);
+        if(opProyecto.isPresent()){
+            return ResponseEntity.ok(opProyecto.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     // Crear un proyecto
 
     public Proyecto create(Proyecto proyecto){
@@ -38,10 +49,10 @@ public class ProyectoService {
 
     public ResponseEntity<Proyecto> update( Proyecto proyecto){
         if (proyecto.getProyId()==null){
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         }
         if (!proyectoRepo.existsById(proyecto.getProyId())){
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.notFound().build();
         }
         Proyecto result = proyectoRepo.save(proyecto);
         return ResponseEntity.ok(result);

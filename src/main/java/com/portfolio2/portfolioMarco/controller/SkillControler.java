@@ -26,6 +26,11 @@ public class SkillControler {
         return skillService.findAll();
     }
 
+    @GetMapping("/api/skills/{id}")
+    public ResponseEntity<Skill> findById(@PathVariable Long id) {
+        return skillService.findById(id);
+    }
+
     //Crear Skill
 
     @PostMapping("/api/skills")

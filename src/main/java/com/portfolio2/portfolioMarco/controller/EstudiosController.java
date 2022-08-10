@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @RestController
 @CrossOrigin("http://localhost:4200/")
 public class EstudiosController {
@@ -27,6 +29,10 @@ public class EstudiosController {
         return estudiosService.findAll();
     }
 
+    @GetMapping("/api/estudios/{id}")
+    public ResponseEntity<Estudio>findById(@PathVariable Long id) {
+        return estudiosService.findById(id);
+    }
     // Crear un estudio
     @PostMapping("/api/estudios")
     public Estudio create(@RequestBody Estudio estudio) {
