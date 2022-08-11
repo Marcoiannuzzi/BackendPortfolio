@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("https://portfolio-marcoiannuzzi.web.app")
 public class UserController {
     final UserService userService;
 

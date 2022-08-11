@@ -11,7 +11,7 @@ import java.util.List;
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("https://portfolio-marcoiannuzzi.web.app")
 public class EstudiosController {
 
     final EstudiosService estudiosService;
